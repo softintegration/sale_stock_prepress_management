@@ -7,7 +7,7 @@ from odoo.exceptions import ValidationError
 class StockMove(models.Model):
     _inherit = 'stock.move'
 
-    prepress_proof_id = fields.Many2one('prepress.proof', string='Prepress proof')
+    prepress_proof_id = fields.Many2one('prepress.proof', string='Prepress proof',related='sale_line_id.prepress_proof_id',store=True)
     client_ref = fields.Char(string='Customer Prepress proof reference',related='prepress_proof_id.client_ref',)
 
     @api.onchange('product_id', 'picking_type_id')
