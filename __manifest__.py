@@ -10,12 +10,13 @@
     'qweb': [],
     'description': False,
     'images': [],
-    'version': '1.0.1',
+    'version': '1.0.1.1',
     'category': 'Hidden',
     'demo': [],
     'depends': ['sale_stock','sale_prepress_management'],
     'data': [
-        'views/stock_picking_views.xml'
+        'views/stock_picking_views.xml',
+        'report/report_deliveryslip.xml',
     ],
     'license': 'LGPL-3',
 }

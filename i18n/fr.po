@@ -53,3 +53,13 @@ msgstr "Type d'opération"
 #, python-format
 msgid "Warning"
 msgstr "Avertissement"
+
+#. module: sale_stock_prepress_management
+#: model_terms:ir.ui.view,arch_db:sale_stock_prepress_management.report_delivery_document_inherited
+msgid "<strong>Customer Prepress proof reference</strong>"
+msgstr "<strong>Rèfèrence BAT client</strong>"
+
+#. module: sale_stock_prepress_management
+#: model_terms:ir.ui.view,arch_db:sale_stock_prepress_management.report_delivery_document_inherited
+msgid "<strong>Prepress Proof</strong>"
+msgstr "<strong>BAT</strong>"

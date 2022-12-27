@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template inherit_id="stock.report_delivery_document" id="report_delivery_document_inherited">
+        <!-- In case stock picking without move_line_ids -->
+        <xpath expr="//table[@name='stock_move_table']/thead/tr/th[@name='th_sm_product']" position="after">
+            <t t-if="o.picking_type_code == 'outgoing'">
+                <th name="th_sm_prepress_proof"><strong>Prepress Proof</strong></th>
+                <th name="th_sm_client_ref"><strong>Customer Prepress proof reference</strong></th>
+            </t>
+        </xpath>
+        <xpath expr="//table[@name='stock_move_table']/tbody/tr/td[1]" position="after">
+            <t t-if="move.picking_id.picking_type_code == 'outgoing'">
+                <td name="td_sm_prepress_proof">
+                    <span t-field="move.prepress_proof_id"/>
+                </td>
+                <td name="td_sm_prepress_proof_client_ref">
+                    <span t-field="move.client_ref"/>
+                </td>
+            </t>
+        </xpath>
+        <!-- In case stock picking with move_line_ids -->
+        <xpath expr="//table[@name='stock_move_line_table']/thead/tr/th[@name='th_sml_product']" position="after">
+            <t t-if="o.picking_type_code == 'outgoing'">
+                <th name="th_sml_prepress_proof"><strong>Prepress Proof</strong></th>
+                <th name="th_sml_client_ref"><strong>Customer Prepress proof reference</strong></th>
+            </t>
+        </xpath>
+    </template>
+
+    <template inherit_id="stock.stock_report_delivery_has_serial_move_line" id="stock_report_delivery_has_serial_move_line_inherited">
+        <!-- In case stock picking without move_line_ids -->
+        <xpath expr="//td[1]" position="after">
+            <t t-if="move.picking_id.picking_type_code == 'outgoing'">
+                <td name="td_sm_prepress_proof">
+                    <span t-field="move.prepress_proof_id"/>
+                </td>
+                <td name="td_sm_prepress_proof_client_ref">
+                    <span t-field="move.client_ref"/>
+                </td>
+            </t>
+        </xpath>
+    </template>
+
+
+
+</odoo>
