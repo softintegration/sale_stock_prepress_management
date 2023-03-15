@@ -42,6 +42,19 @@
         </xpath>
     </template>
 
+    <template inherit_id="stock.stock_report_delivery_aggregated_move_lines" id="stock_report_delivery_aggregated_move_lines_inherited">
+        <xpath expr="//td[1]" position="after">
+            <t t-if="aggregated_lines[line]['picking_type_code'] == 'outgoing'">
+                <td name="td_prepress_proof_id">
+                    <span t-esc="aggregated_lines[line]['prepress_proof_id']"/>
+                </td>
+                <td name="td_client_ref">
+                    <span t-esc="aggregated_lines[line]['client_ref']"/>
+                </td>
+            </t>
+        </xpath>
+    </template>
+
 
 
 </odoo>
