@@ -29,14 +29,14 @@
     </template>
 
     <template inherit_id="stock.stock_report_delivery_has_serial_move_line" id="stock_report_delivery_has_serial_move_line_inherited">
-        <!-- In case stock picking without move_line_ids -->
+         In case stock picking without move_line_ids
         <xpath expr="//td[1]" position="after">
-            <t t-if="move.picking_id.picking_type_code == 'outgoing'">
+            <t t-if="move_line.picking_id.picking_type_code == 'outgoing'">
                 <td name="td_sm_prepress_proof">
-                    <span t-field="move.prepress_proof_id"/>
+                    <span t-field="move_line.move_id.prepress_proof_id"/>
                 </td>
                 <td name="td_sm_prepress_proof_client_ref">
-                    <span t-field="move.client_ref"/>
+                    <span t-field="move_line.move_id.client_ref"/>
                 </td>
             </t>
         </xpath>
