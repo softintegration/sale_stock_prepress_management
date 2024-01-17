@@ -11,7 +11,7 @@
         </xpath>
         <xpath expr="//table[@name='stock_move_table']/tbody/tr/td[1]" position="after">
             <t t-if="move.picking_id.picking_type_code == 'outgoing'">
-                <td name="td_sm_prepress_proof" style="font-size:9px !important;">
+                <td name="td_sm_prepress_proof">
                     <span t-field="move.prepress_proof_id"/>
                 </td>
                 <td name="td_sm_prepress_proof_client_ref">
